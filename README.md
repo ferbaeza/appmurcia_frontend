@@ -6,6 +6,9 @@ git branch -M main
 git remote add origin https://github.com/ferbaeza/appmurcia_frontend.git
 git push -u origin main -->
 
+
+# # php C:\laragon\www\appmurcia_codeigniter\public\index.php commands/news
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

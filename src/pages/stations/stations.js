@@ -37,7 +37,7 @@ export async function getStaticProps() {
                             <h5 class="card-title">{post.label} {post.address}</h5>
                             <p class="card-text">Ideess: {post.ideess}</p>
                             <p class="card-text">Localizacion: {post.longitud} {post.latitud}</p>
-                            <a href="#" class="btn btn-primary">Ver opiniones</a>
+                            <a href="#" class="btn btn-secondary">Ver mapa</a>
                           </div>
                         </div>
                         </div>

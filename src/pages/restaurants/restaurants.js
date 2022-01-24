@@ -20,10 +20,29 @@ export async function getStaticProps() {
             </Head>
             <Navbar/>
             <div className="back text-center">
+            <div className="p-1 mb-7 ml-7 bg-dark text-white" id="head">
+                <ul className="nav justify-content-center fs-3">
+                    <li className="nav-item">
+                      <Link href="../reviews/reviews">
+                          <a className="nav-link text-muted" aria-current="page">Reviews</a>
+                      </Link>
+                    </li>
+                    <li className="nav-item">
+                      <Link href="/">
+                          <a className="nav-link text-muted" aria-current="page">Home</a>
+                      </Link>
+                    </li>
+                </ul>
+              </div>
+
+
+
+
+
               <h1 className="text-center fs-1 text-secondary">Restaurantes</h1>
-                  <Link href="/">
-                      <a class="btn btn-dark">Home</a>
-                  </Link>
+                <div>
+
+                  </div>
             </div>
 
                
