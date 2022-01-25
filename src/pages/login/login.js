@@ -16,7 +16,7 @@ const Form = ({ formId, userForm, forNewUser = true }) => {
   const [message, setMessage] = useState('')
 
 //   const [form, setForm] = useState({
-//     mail: userForm.mail,
+//     cd a : userForm.mail,
 //     password: userForm.password
     
 //   })
@@ -26,7 +26,7 @@ const Form = ({ formId, userForm, forNewUser = true }) => {
   /* The POST method adds a new entry in the mongodb database. */
   const postData = async (form) => {
     try {
-      const res = await fetch('/api/users', {
+      const res = await fetch('/usersapi/', {
         method: 'POST',
         headers: {
           Accept: contentType,

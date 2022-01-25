@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Navbar from '../components/navbar/navbar'
 import Carrousel from '../components/headfoot/Carrousel'
 import Footer from '../components/headfoot/footer'
+import Body from './main/body'
 
 export default function Home() {
   return (
@@ -19,43 +20,17 @@ export default function Home() {
       <div className='mainfer'>
         <Navbar/>
       </div>
-      <div className='container mt-2'>
+      <div className='container mt-4'>
         <Carrousel/>
       </div>
-      <div class="container">
-        <div class="row row-cols-3">
-          <div class="col rounded-3 pt-5" >
-            <div class="card text-dark bg-light mb-3">
-              <Link href="/stations/stations">
-                <a className="card-header bg-light text-secondary text-center list-group-item list-group-item-action">
-                  <div class="fs-2 card-header bg-light text-secondary text-center">Gasolineras</div>
-                </a>
-              </Link>
-            </div>
-          </div>
-          <div class="col rounded-3 pt-5" >
-            <div class="card text-dark bg-light mb-3">
-              <Link href="/restaurants/restaurants">
-                <a className="card-header bg-light text-secondary text-center list-group-item list-group-item-action">
-                  <div class="fs-2 card-header bg-light text-secondary text-center">Restaurantes</div>
-                </a>
-              </Link>
-            </div>
-          </div>
-          <div class="col rounded-3 pt-5" >
-            <div class="card text-dark bg-light mb-3">
-              <Link href="/media/media">
-                <a className="card-header bg-light text-secondary text-center list-group-item list-group-item-action">
-                  <div class="fs-2 card-header bg-light text-secondary text-center">Media</div>
-                </a>
-              </Link>
-            </div>
-          </div>
+      <div class="conatiner mt-5 mb-5">
+        <Body/>
       </div>
-        
-    </div>
+      <div class="footer mt-5">
+        <Footer/>
+      </div>
 
-    <Footer/>
+     
     
     
     

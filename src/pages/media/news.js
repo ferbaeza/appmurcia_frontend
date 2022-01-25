@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Head from "next/head";
 import Navbar from "../../components/navbar/navbar";
+import Image from "next/image";
 
 
 export async function getStaticProps() {
@@ -28,10 +29,16 @@ export async function getStaticProps() {
                       </Link>
                     </li>
                     <li className="nav-item">
+                      <Link href="/media/media">
+                          <a className="nav-link text-muted" aria-current="page">Media</a>
+                      </Link>
+                    </li>
+                    <li className="nav-item">
                       <Link href="/">
                           <a className="nav-link text-muted" aria-current="page">Home</a>
                       </Link>
                     </li>
+
                 </ul>
               </div>
         </div>
@@ -62,15 +69,20 @@ export async function getStaticProps() {
                                         <div class="modal-header">
                                             <h5 class="modal-title" id="staticBackdropLabel">{post.title}</h5>
                                         </div>
-                                        <div class="modal-body">
+                                        <div class="modal-body mb-4">
                                             <p class="card-text">{post.description}</p>
                                             
                                         </div>
-                                        <div class="modal-body bg-primary text-white">
-                                            <p class="card-text ">guid: {post.pubDate}</p> 
-                                            <p class="card-text">url: {post.url}</p>
-                                            <p class="card-text">guid: {post.guid}</p> 
+                                        <div class="modal-body fs-2">
+                                            <a href={post.url} class="btn stretched-link">
+                                            <button type="button" class="btn btn-secondary rounded-circle">
+                                                <Image src="/images/browser.svg" width={80} height={80} alt="Youtube"/>
+                                            </button> 
+                                            </a> Abrir en la web
+                                        </div>
 
+                                        <div class="modal-body bg-primary text-white mt-5">
+                                            <p class="card-text">guid: {post.guid}</p> 
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>

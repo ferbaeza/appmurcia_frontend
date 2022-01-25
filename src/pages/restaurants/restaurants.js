@@ -34,15 +34,7 @@ export async function getStaticProps() {
                     </li>
                 </ul>
               </div>
-
-
-
-
-
               <h1 className="text-center fs-1 text-secondary">Restaurantes</h1>
-                <div>
-
-                  </div>
             </div>
 
                

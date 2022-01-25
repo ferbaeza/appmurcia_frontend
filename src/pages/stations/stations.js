@@ -20,10 +20,16 @@ export async function getStaticProps() {
             </Head>
             <Navbar/>
             <div className="back text-center">
-              <h1 className="text-center text-secondary">Gasolineras</h1>
-                  <Link href="/">
-                      <a class="btn btn-dark">Home</a>
-                  </Link>
+            <div className="p-1 mb-7 ml-7 bg-dark text-white" id="head">
+                <ul className="nav justify-content-center fs-3">
+                    <li className="nav-item">
+                      <Link href="/">
+                          <a className="nav-link text-muted" aria-current="page">Home</a>
+                      </Link>
+                    </li>
+                </ul>
+              </div>
+              <h1 className="text-center fs-1 text-secondary">Gasolineras</h1>
             </div>
 
               <div className='container'>
@@ -36,7 +42,8 @@ export async function getStaticProps() {
                           <div class="card-body">
                             <h5 class="card-title">{post.label} {post.address}</h5>
                             <p class="card-text">Ideess: {post.ideess}</p>
-                            <p class="card-text">Localizacion: {post.longitud} {post.latitud}</p>
+                            <p class="card-text">Latitiud: {post.latitud}</p>
+                            <p class="card-text">Longitud: {post.longitud}</p>
                             <a href="#" class="btn btn-secondary">Ver mapa</a>
                           </div>
                         </div>

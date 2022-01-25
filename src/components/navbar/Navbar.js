@@ -28,25 +28,16 @@ const Navbar=()=>{
                             <a className="nav-link text-muted" aria-current="page">Restaurantes</a>
                         </Link>
                     </li>
-                    <li className="nav-item">
-                        <div id="selectmedia" className="dropdown m-3 text-white">
-                            <button
-                            className="btn btn-info dropdown-toggle bg-dark text-secondary fs-4"
-                            type="button"
-                            data-bs-toggle="dropdown"
-                            id="dropdownMenuButton1"
-                            aria-expanded="false">Media</button>                        
-                            <ul className="dropdown-menu bg-secondary" aria-labelledby="dropdownMenuButton1">
-                                <li>
-                                    <a className="dropdown-item bg-secondary text-white" href="/media/videos">Videos</a>
-                                </li>
-                                <li>
-                                    <a className="dropdown-item bg-secondary text-white" href="/media/news">Noticias</a>
-                                </li>
-                            </ul>
-                        </div>
-
+                    <li class="nav-item dropdown mt-2">
+                        <a class="nav-link dropdown-toggle text-secondary" href="/media/media" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Media
+                        </a>
+                        <ul class="dropdown-menu bg-dark text-secondary " aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item bg-dark text-secondary" href="/media/videos">Videos</a></li>
+                            <li><a class="dropdown-item bg-dark text-secondary" href="/media/news">Noticias</a></li>
+                        </ul>
                     </li>
+                    
 
                 </ul>
         </header>
