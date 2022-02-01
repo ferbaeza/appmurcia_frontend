@@ -43,6 +43,12 @@ export async function getStaticProps() {
                           <a className="nav-link text-muted" aria-current="page">Home</a>
                       </Link>
                     </li>
+                    <li className="nav-item">
+                      <Link href="/videos/videos">
+                          <a className="nav-link text-muted" aria-current="page">Test Videos</a>
+                      </Link>
+                    </li>
+
                 </ul>
               </div>
         </div>

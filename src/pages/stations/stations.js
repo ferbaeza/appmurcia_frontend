@@ -34,9 +34,6 @@ export async function getStaticProps() {
               <h1 className="text-center fs-1 text-secondary">Gasolineras</h1>
             </div>
             <div className="container">
-              <Map>
-                googleMapURL : `https://maps.googleapis.com/maps/api/js?v=3.exp$key=${apikey.mapsKey}`
-              <Map/>
 
             </div>
 
