@@ -8,13 +8,13 @@ const mapStyles = {
   };
   
 export class MapContainer extends Component {
-	
 	constructor(props) {
+		
 	  super(props);
-  
+		
 	  this.state = {
 		stores: [{lat: 47.49855629475769, lng: -122.14184416996333},
-				{latitude: 47.359423, longitude: -122.021071},
+				{latitude: 37.959423, longitude: -1.021071},
 				{latitude: 47.2052192687988, longitude: -121.988426208496},
 				{latitude: 47.6307081, longitude: -122.1434325},
 				{latitude: 47.3084488, longitude: -122.2140121},
@@ -33,7 +33,8 @@ export class MapContainer extends Component {
 	}
   
 	render() {
-	  return (   		
+	  return (   	
+			
         <Map
         google={this.props.google}
         zoom={11}
@@ -50,3 +51,17 @@ export class MapContainer extends Component {
   export default GoogleApiWrapper({
 	apiKey: 'AIzaSyAKIXuse3FS3ZQ3Bi9d-W1SNSNWgmlVkXo'
   })(MapContainer);
+
+
+//   export async function getStaticProps() {
+//     const res = await fetch("http://appmurcia_codeigniter.test/rest/stations")
+//     const data = await res.json()
+// 	const points=[]
+//     return {
+//       props: {
+//         data
+//       }
+	  
+//     }
+	
+//   } 
