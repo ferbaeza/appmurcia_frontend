@@ -50,7 +50,9 @@ export async function getStaticProps() {
                             <p class="card-text">{post.address}</p>
                             <p class="card-text">Numero de opiniones: {post.numReviews}</p>
                             <p class="card-text">Puntuacion de los clientes: {post.reviewAverage}</p>
-                            <a href="#" class="btn btn-primary">Ver opiniones</a>
+                            <Link href={`/restaurants/[id]`} as={`/restaurants/${post.id}`} key={post.id}> 
+                              <a class="btn btn-primary">Ver opiniones</a>
+                            </Link>
                           </div>
                         </div>
                         </div>

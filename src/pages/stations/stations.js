@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Head from "next/head";
 import Navbar from "../../components/navbar/navbar";
+import Map from "./map";
+import apikey from "./apikey";
 
 export async function getStaticProps() {
     const res = await fetch("http://appmurcia_codeigniter.test/rest/stations")
@@ -30,6 +32,9 @@ export async function getStaticProps() {
                 </ul>
               </div>
               <h1 className="text-center fs-1 text-secondary">Gasolineras</h1>
+            </div>
+            <div className="container">
+
             </div>
 
               <div className='container'>
