@@ -16,7 +16,6 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 
 
-
 export default class NextJsCarousel extends Component {
 	render() {
 		return (
@@ -46,8 +45,7 @@ export default class NextJsCarousel extends Component {
                 
 
 			</Carousel>
-           
-           
+       
 			</div>
 		);
 	}

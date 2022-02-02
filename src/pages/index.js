@@ -6,10 +6,12 @@ import Navbar from '../components/navbar/navbar'
 import Carrousel from '../components/headfoot/Carrousel'
 import Footer from '../components/headfoot/footer'
 import Body from './main/body'
+import Map from '../components/maps/map'
 
 export default function Home() {
   return (
     <>
+
       <div className="head">
         <Head>
           <title>Murcia Turismo</title>
@@ -23,17 +25,24 @@ export default function Home() {
       <div className='container mt-4'>
         <Carrousel/>
       </div>
-      <div class="conatiner mt-5 mb-5">
-        <Body/>
+      <div className='container mt-4'>
+        <h2 style={{textAlign: 'center'}}>Murcia destino de calidad, destino seguro</h2>
+        <p style={{textAlign: 'center'}}>Ven y disfruta de su fantástico patrimonio cultural e histórico, de su reconocida gastronomía, de su naturaleza y <br></br>
+         de su gran oferta de ocio. Descubre una ciudad viva, dinámica, emprendedora y con un clima envidiable durante <br></br>
+          todo el año.</p>
+        <h4 style={{textAlign: 'center'}}>Seguro que Murcia es para ti</h4>
       </div>
-      <div class="footer mt-5">
+      <div class="container mt-5 mb-5 ml-auto mr-auto">
+        <Map/>
+      </div>
+      {/* <div class="container mt-5 mb-5">
+        <Body/>
+      </div> */}
+      <div class="footer mt-5" style={{position: 'fixed !important', width:'100% !important', bottom: '0 !important'}}>
         <Footer/>
       </div>
 
-     
-    
-    
-    
+ 
     </>
   )
 }
