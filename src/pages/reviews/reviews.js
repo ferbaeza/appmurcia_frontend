@@ -47,6 +47,7 @@ export async function getStaticProps() {
                           <div class="card-header bg-primary text-white" key={i}>{post.updated_at.timezone} {post.updated_at.date}</div>
                           <div class="card-body">
                             <h5 class="card-title">{post.id}</h5>
+                            <h5 class="card-title text-danger">{post.restaurant_id}</h5>
                             <p class="card-text">{post.description}</p>
                             <p class="card-text">Escrito por: <label className="text-primary">{post.email}</label></p>
                             <p class="card-text">Puntuacion de los clientes: <label className="text-primary">{post.puntuation}</label></p>
