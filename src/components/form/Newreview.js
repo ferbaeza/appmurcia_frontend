@@ -14,12 +14,13 @@ export default function NewReview(){
     const submitComment = async ()=>{
         const response = await fetch("http://appmurcia_codeigniter.test/rest/reviewbymailbyrestid",{
             method: 'POST',
-            body: JSON.stringify({description}),
+            body: JSON.stringify({description:description}),
 
             headers: {
                 'Content-Type': 'application/json',
                 },
             })
+            console.log(response)
             const data = await response.json()
             console.log(data)
             

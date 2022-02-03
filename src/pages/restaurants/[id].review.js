@@ -6,7 +6,7 @@ import Form from "../../components/form/Form"
 export default function Newreview(){
     return(
         <>
-            <Form/>
+            <NewReview/>
         </>
     )
 }
