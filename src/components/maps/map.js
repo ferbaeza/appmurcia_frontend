@@ -2,7 +2,7 @@ import { useState } from "react";
 import ReactMapGL, { Marker } from "react-map-gl";
 export default function Map({ locations }) {
   // UseState hook
-    const [selectedLocation, setSelectedLocation] = useState({})
+  const [selectedLocation, setSelectedLocation] = useState({})
   const [viewport, setViewport] = useState({
       width: "100%",
       height: "100%",

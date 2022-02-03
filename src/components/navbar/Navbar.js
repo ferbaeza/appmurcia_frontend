@@ -1,21 +1,21 @@
 import Image from "next/image";
 import Link from "next/link";
-import { NoMatch } from '../../pages/weather/weather';
+//import Weather from "../../pages/weather/weather";
+//import { NoMatch } from '../../pages/weather/weather';
 
 
 export async function getStaticProps() {
-    const res = await fetch("http://appmurcia_codeigniter.test/rest/weather")
+    const res = await fetch("http://appmurcia_codeigniter.test/rest/weather/")
     const data = await res.json()
-    console.log(data)
     return {
       props: {
         data
       }
     }
-}
+  } 
 
 
-const Navbar=()=>{
+export default function Navbar({data}){
     return(
         <>
             <header className="p-1 mb-7 ml-7 bg-dark text-white" id="head">
@@ -51,15 +51,23 @@ const Navbar=()=>{
                             <li><a class="dropdown-item bg-dark text-secondary" href="/media/news">Noticias</a></li>
                         </ul>
                     </li>
+                    <li>
+                        
+                    </li>
                     
                     <li>
-                        <NoMatch />
+                        <Link href="../weather/weather">
+                            <a className="nav-link text-muted" aria-current="page">W</a>
+                        </Link>
+
                     </li>
 
                 </ul>
+                
         </header>
+        <div>
+        </div>
 
         </>
     )
 }
-export default Navbar;

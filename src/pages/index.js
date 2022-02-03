@@ -9,6 +9,18 @@ import Body from "./main/body";
 import Map from "../components/maps/mapa";
 //import Weather from "../pages/weather/weather";
 import { useEffect } from "react";
+import { main } from "@popperjs/core";
+import LastNew from "./news/LastNew";
+import LastVideo from "./videos/Lastvideo";
+
+
+
+const mapStyles = {
+  marginTop:'125px',
+	height: '450px'
+
+  };
+
 
 
 
@@ -50,12 +62,23 @@ export default function Home() {
         </p>
         <h4 style={{ textAlign: "center" }}>Seguro que Murcia es para ti</h4>
       </div>
-      <div class="container mt-5 mb-5 ml-auto mr-auto">
-        <Map />
+
+      <div className="mx-auto">
+        <div style={mapStyles}>
+          <Map />
+          </div>
       </div>
-      {/* <div class="container mt-5 mb-5">
+      <div class="container mt-5 mb-5">
         <Body/>
-      </div> */}
+      </div> 
+      <div class="container mt-5 mb-5">
+        <LastNew/>
+      </div> 
+      <div class="container mt-5 mb-5" >
+        <LastVideo/>
+      </div> 
+
+
       <div
         class="footer mt-5"
         style={{
@@ -69,3 +92,5 @@ export default function Home() {
     </>
   );
 }
+
+

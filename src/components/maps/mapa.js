@@ -1,9 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
+import { auto } from '@popperjs/core';
 
 const mapStyles = {
+	margin: '0 auto',
 	width: '85%',
-	height: '500px',
+	height: '450px',
 
   };
   
@@ -34,7 +36,7 @@ export class MapContainer extends Component {
 			
         <Map
         google={this.props.google}
-        zoom={11}
+        zoom={12}
         style={mapStyles}
         initialCenter={{ lat: 37.9835, lng: -1.12989}}
         >
@@ -50,15 +52,16 @@ export class MapContainer extends Component {
   })(MapContainer);
 
 
-//   export async function getStaticProps() {
-//     const res = await fetch("http://appmurcia_codeigniter.test/rest/stations")
-//     const data = await res.json()
-// 	const points=[]
-//     return {
-//       props: {
-//         data
-//       }
+  export async function getStaticProps() {
+    const res = await fetch("http://appmurcia_codeigniter.test/rest/stations")
+    const data = await res.json()
+	const [ points, setPoints ]=useState(null)
+    return {
+      props: {
+        data
+      }
 	  
-//     }
+    }
+
 	
-//   } 
+  } 
