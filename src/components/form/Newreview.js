@@ -4,7 +4,7 @@ import axios from 'axios';
 
 
 
-export default function Form(){
+export default function NewReview(){
 
     const [description, setDescription]=useState('')
     const [email, setEmail]=useState('')
