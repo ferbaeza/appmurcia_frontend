@@ -1,17 +1,25 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../../styles/Home.module.css'
-import Link from 'next/link'
-import Navbar from '../components/navbar/navbar'
-import Carrousel from '../components/headfoot/Carrousel'
-import Footer from '../components/headfoot/footer'
-import Body from './main/body'
-import Map from '../components/maps/map'
+import Head from "next/head";
+import Image from "next/image";
+import styles from "../../styles/Home.module.css";
+import Link from "next/link";
+import Navbar from "../components/navbar/navbar";
+import Carrousel from "../components/headfoot/Carrousel";
+import Footer from "../components/headfoot/footer";
+import Body from "./main/body";
+import Map from "../components/maps/mapa";
+//import Weather from "../pages/weather/weather";
+import { useEffect } from "react";
+
+
 
 export default function Home() {
+  // useEffect(async () => {
+  //   await fetch("http://appmurcia_codeigniter.test/rest/weather")
+  //     .then((response) => response.json())
+  //     .then((data) => console.log(data));
+  // });
   return (
     <>
-
       <div className="head">
         <Head>
           <title>Murcia Turismo</title>
@@ -19,31 +27,45 @@ export default function Home() {
           <link rel="icon" href="/favicon.ico" />
         </Head>
       </div>
-      <div className='mainfer'>
-        <Navbar/>
+      <div className="mainfer">
+        <Navbar />
       </div>
-      <div className='container mt-4'>
-        <Carrousel/>
+      <div className="container mt-4">
+        <Carrousel />
       </div>
-      <div className='container mt-4'>
-        <h2 style={{textAlign: 'center'}}>Murcia destino de calidad, destino seguro</h2>
-        <p style={{textAlign: 'center'}}>Ven y disfruta de su fantástico patrimonio cultural e histórico, de su reconocida gastronomía, de su naturaleza y <br></br>
-         de su gran oferta de ocio. Descubre una ciudad viva, dinámica, emprendedora y con un clima envidiable durante <br></br>
-          todo el año.</p>
-        <h4 style={{textAlign: 'center'}}>Seguro que Murcia es para ti</h4>
+      {/* <div className="container mt-4">
+        <Weather />
+      </div> */}
+      <div className="container mt-4"></div>
+      <div className="container mt-4">
+        <h2 style={{ textAlign: "center" }}>
+          Murcia destino de calidad, destino seguro
+        </h2>
+        <p style={{ textAlign: "center" }}>
+          Ven y disfruta de su fantástico patrimonio cultural e histórico, de su
+          reconocida gastronomía, de su naturaleza y <br></br>
+          de su gran oferta de ocio. Descubre una ciudad viva, dinámica,
+          emprendedora y con un clima envidiable durante <br></br>
+          todo el año.
+        </p>
+        <h4 style={{ textAlign: "center" }}>Seguro que Murcia es para ti</h4>
       </div>
       <div class="container mt-5 mb-5 ml-auto mr-auto">
-        <Map/>
+        <Map />
       </div>
       {/* <div class="container mt-5 mb-5">
         <Body/>
       </div> */}
-      <div class="footer mt-5" style={{position: 'fixed !important', width:'100% !important', bottom: '0 !important'}}>
-        <Footer/>
+      <div
+        class="footer mt-5"
+        style={{
+          position: "fixed !important",
+          width: "100% !important",
+          bottom: "0 !important",
+        }}
+      >
+        <Footer />
       </div>
-
- 
     </>
-  )
+  );
 }
-  

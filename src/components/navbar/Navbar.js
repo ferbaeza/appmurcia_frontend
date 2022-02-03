@@ -1,5 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
+import { NoMatch } from '../../pages/weather/weather';
+
+
+export async function getStaticProps() {
+    const res = await fetch("http://appmurcia_codeigniter.test/rest/weather")
+    const data = await res.json()
+    console.log(data)
+    return {
+      props: {
+        data
+      }
+    }
+}
+
 
 const Navbar=()=>{
     return(
@@ -38,6 +52,9 @@ const Navbar=()=>{
                         </ul>
                     </li>
                     
+                    <li>
+                        <NoMatch />
+                    </li>
 
                 </ul>
         </header>

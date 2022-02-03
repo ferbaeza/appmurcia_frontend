@@ -1,8 +1,10 @@
 import Link from "next/link";
 import Head from "next/head";
 import Navbar from "../../components/navbar/navbar";
-import Map from "./map";
-import apikey from "./apikey";
+//import ReactMapGL from "../../components/maps/mapGasStation";
+// import Map from "./map";
+// import apikey from "./apikey";
+//import Map from '../components/maps/Map'
 
 export async function getStaticProps() {
     const res = await fetch("http://appmurcia_codeigniter.test/rest/stations")
@@ -13,12 +15,13 @@ export async function getStaticProps() {
       }
     }
   } 
+  
 
   export default function Restaurants({data}){
       return(
           <>
             <Head>
-                <title>Restaurantes</title>
+                <title>Gasolineras</title>
             </Head>
             <Navbar/>
             <div className="back text-center">
@@ -36,6 +39,10 @@ export async function getStaticProps() {
             <div className="container">
 
             </div>
+
+            {/* <div className="container mt-4">
+              <ReactMapGL />
+            </div> */}
 
               <div className='container'>
               <div class="row row-cols-3">
