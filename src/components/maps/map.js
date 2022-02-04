@@ -1,15 +1,19 @@
 import { useState } from "react";
 import ReactMapGL, { Marker } from "react-map-gl";
+
+
+
+
 export default function Map({ locations }) {
   // UseState hook
-    const [selectedLocation, setSelectedLocation] = useState({})
+  const [selectedLocation, setSelectedLocation] = useState({})
   const [viewport, setViewport] = useState({
       width: "100%",
       height: "100%",
       // The latitude and longitude of the center of London
-      latitude: 51.5074,
-      longitude: -0.1278,
-      zoom: 10
+      latitude:37.979423,
+      longitude: -1.131000,
+      zoom: 12.5
     });
     return (
       <ReactMapGL

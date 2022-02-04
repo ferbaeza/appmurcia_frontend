@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { NoMatch } from '../../pages/weather/weather';
+//import { NoMatch } from '../../pages/weather/weather';
 
 
 export async function getStaticProps() {
@@ -53,7 +53,9 @@ const Navbar=()=>{
                     </li>
                     
                     <li>
-                        <NoMatch />
+                        <Link href="../maps/Map">
+                            <a className="nav-link text-muted" aria-current="page">Mapas</a>
+                        </Link>
                     </li>
 
                 </ul>
