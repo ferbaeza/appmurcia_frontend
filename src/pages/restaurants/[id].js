@@ -108,9 +108,10 @@ export default function Reviews({ newinfo }) {
   )
 }
 
-export async function getServerSideProps({ params }) {
+export async function getServerSideProps() {
   const res = await fetch(`http://appmurcia_codeigniter.test/rest/reviewrestauranteid/1`);
   const newinfo = await res.json();
+  console.log(res)
   return {
     props: {
       newinfo
