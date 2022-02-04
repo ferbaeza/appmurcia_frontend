@@ -51,18 +51,13 @@ export default function Navbar({data}){
                             <li><a class="dropdown-item bg-dark text-secondary" href="/media/news">Noticias</a></li>
                         </ul>
                     </li>
-                    <li>
-
-                     
-                        
-                    </li>
-                    
                     <li class="nav-item dropdown mt-2">
                         <Link href="../maps/Map">
                             <a className="nav-link text-muted" aria-current="page">Mapas</a>
                         </Link>
                     </li>
-                    <li class="nav-item dropdown mt-2 text-danger">
+                    
+                    <li class="nav-item dropdown mt-2">
                         <Link href="../weather/weather">
                             <a className="nav-link text-danger" aria-current="page">W</a>
                         </Link>
@@ -70,10 +65,17 @@ export default function Navbar({data}){
                     </li>
                     <li class="nav-item dropdown mt-2 text-danger">
                         <Link href="../videos/Lastvideo">
-                            <a className="nav-link text-danger" aria-current="page">Video</a>
+                            <a className="nav-link text-danger" aria-current="page">LastVideo</a>
                         </Link>
 
                     </li>
+                    <li class="nav-item dropdown mt-2 text-danger">
+                        <Link href="../news/LastNew">
+                            <a className="nav-link text-danger" aria-current="page">LastNew</a>
+                        </Link>
+
+                    </li>
+
 
 
                 </ul>
