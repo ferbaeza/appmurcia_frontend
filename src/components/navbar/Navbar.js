@@ -76,10 +76,17 @@ export default function Navbar({data}){
                     </li>
                     <li class="nav-item dropdown mt-2 text-danger">
                         <Link href="../videos/Lastvideo">
-                            <a className="nav-link text-danger" aria-current="page">Video</a>
+                            <a className="nav-link text-danger" aria-current="page">LastVideo</a>
                         </Link>
 
                     </li>
+                    <li class="nav-item dropdown mt-2 text-danger">
+                        <Link href="../news/LastNew">
+                            <a className="nav-link text-danger" aria-current="page">LastNew</a>
+                        </Link>
+
+                    </li>
+
 
 
                 </ul>

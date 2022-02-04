@@ -75,7 +75,9 @@ export default function Home() {
         <LastNew/>
       </div> 
       <div class="container mt-5 mb-5" >
-        {/*<LastVideo/>*/}
+        <div style={mapStyles}>
+          <LastVideo/>
+        </div>
         <Link href="./videos/Lastvideo">
           <a>Video</a>
         </Link>
