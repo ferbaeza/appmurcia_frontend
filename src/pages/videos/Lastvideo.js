@@ -20,13 +20,27 @@ export async function getStaticProps() {
 
 
   export default function LastVideo({data}){
+    const ops={
+      height:'600',
+      width:'800',
+      playerVars:{
+       // "https://www.youtube.com/watch?v=-qydqkjT5Zg",
+        autoplay:1,
+      },
+
+    };
     return(
         <>
             <div className="text-center">
                 <h1 className="text-center fs-1 text-secondary">Ultimo Video</h1>
             </div>
             <div className='mx-auto'>
-                <YouTube style={lastStyles}></YouTube>
+                <YouTube 
+                style={lastStyles}
+                opt={ops}
+                
+                
+                />
             </div>
         </>
     )
