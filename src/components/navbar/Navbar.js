@@ -51,24 +51,13 @@ export default function Navbar({data}){
                             <li><a class="dropdown-item bg-dark text-secondary" href="/media/news">Noticias</a></li>
                         </ul>
                     </li>
-                    <li>
-<<<<<<< HEAD
-=======
-                        
-                    </li>
-                    
                     <li class="nav-item dropdown mt-2">
->>>>>>> 25eafe7ea56d15516e60d07f3a16d72207ab4784
                         <Link href="../maps/Map">
                             <a className="nav-link text-muted" aria-current="page">Mapas</a>
                         </Link>
                     </li>
-<<<<<<< HEAD
                     
-                    <li>
-=======
-                    <li class="nav-item dropdown mt-2 text-danger">
->>>>>>> 25eafe7ea56d15516e60d07f3a16d72207ab4784
+                    <li class="nav-item dropdown mt-2">
                         <Link href="../weather/weather">
                             <a className="nav-link text-danger" aria-current="page">W</a>
                         </Link>
