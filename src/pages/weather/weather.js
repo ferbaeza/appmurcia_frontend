@@ -31,7 +31,5 @@ export async function getStaticProps() {
 
         </>
     )
-
-
-    
+   
 }
