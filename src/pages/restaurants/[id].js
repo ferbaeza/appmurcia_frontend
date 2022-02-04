@@ -13,13 +13,13 @@ export default function Reviews({ newinfo }) {
   const submitComment = async ()=>{
       //preventDefault();
       let review ={
-        //restaurant_id: params.id,
+        //restaurant_id: newinfo.restaurant_id,
         description: description,
         email:email,
-        puntuation, puntuation,
+        puntuation: puntuation,
       }
 
-    const response = await fetch(`http://appmurcia_codeigniter.test/rest/reviewbymailbyrestid/1`,{
+    const response = await fetch(`http://appmurcia_codeigniter.test/rest/reviewbymailbyrestid/${newinfo.restaurant_id}`,{
         method: 'POST',
         body: JSON.stringify({review}),
         headers: {
