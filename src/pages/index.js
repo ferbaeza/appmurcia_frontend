@@ -75,7 +75,10 @@ export default function Home() {
         <LastNew/>
       </div> 
       <div class="container mt-5 mb-5" >
-        <LastVideo/>
+        {/*<LastVideo/>*/}
+        <Link href="./videos/Lastvideo">
+          <a>Video</a>
+        </Link>
       </div> 
 
 

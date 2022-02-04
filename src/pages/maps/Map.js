@@ -3,6 +3,7 @@ import styles from "../../../styles/style.module.css";
 import dynamic from "next/dynamic";
 import Head from "next/head";
 import Navbar from "../../components/navbar/navbar";
+import Link from "next/link";
 
 import React, { useEffect, useState } from "react";
 const Map = dynamic(() => import("../../components/maps/Map"), {
@@ -33,12 +34,25 @@ export default function IndexPage() {
           <title>Mapas</title>
       </Head>
       <Navbar/>
+      <div className="back text-center">
+            <div className="p-1 mb-7 ml-7 bg-dark text-white" id="head">
+                <ul className="nav justify-content-center fs-3">
+                    <li className="nav-item">
+                      <Link href="/">
+                          <a className="nav-link text-muted" aria-current="page">Home</a>
+                      </Link>
+                    </li>
+                </ul>
+              </div>
+              <h1 className="text-center fs-1 text-secondary">Mapas</h1>
+            </div>
+
       
 
       <div className={styles.boxCenter}>
         <div className={styles.boxUp}>
-          <h1 className={styles.titulo}>Mapas</h1>
-          <button className="btn btn-secondary" onClick={() => setResourceType(["gas"])}>Gas</button>
+          {/*<h1 className={styles.titulo}>Mapas</h1>*/}
+          <button className="btn btn-secondary " onClick={() => setResourceType(["gas"])}>Gas</button>
           <button className="btn btn-secondary" onClick={() => setResourceType(["restaurant"])}>Restaurant</button>
           <button className="btn btn-secondary" onClick={() => setResourceType(["hotel"])}>Hotel</button>
           <button className="btn btn-secondary" onClick={() => setResourceType(["shop"])}>Market</button>

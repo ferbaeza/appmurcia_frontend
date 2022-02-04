@@ -1,9 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-<<<<<<< HEAD
-=======
 //import Weather from "../../pages/weather/weather";
->>>>>>> fer
 //import { NoMatch } from '../../pages/weather/weather';
 
 
@@ -58,18 +55,24 @@ export default function Navbar({data}){
                         
                     </li>
                     
-                    <li>
-<<<<<<< HEAD
+                    <li class="nav-item dropdown mt-2">
                         <Link href="../maps/Map">
                             <a className="nav-link text-muted" aria-current="page">Mapas</a>
                         </Link>
-=======
+                    </li>
+                    <li class="nav-item dropdown mt-2 text-danger">
                         <Link href="../weather/weather">
-                            <a className="nav-link text-muted" aria-current="page">W</a>
+                            <a className="nav-link text-danger" aria-current="page">W</a>
                         </Link>
 
->>>>>>> fer
                     </li>
+                    <li class="nav-item dropdown mt-2 text-danger">
+                        <Link href="../videos/Lastvideo">
+                            <a className="nav-link text-danger" aria-current="page">Video</a>
+                        </Link>
+
+                    </li>
+
 
                 </ul>
                 
