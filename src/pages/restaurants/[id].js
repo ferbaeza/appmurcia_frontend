@@ -2,6 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from 'react';
 
+export async function getServerSideProps() {
+  const res = await fetch(`http://appmurcia_codeigniter.test/rest/reviewrestauranteid/1`);
+  const newinfo = await res.json();
+  console.log(res)
+  return {
+    props: {
+      newinfo
+    }
+  }
+}
 
 export default function Reviews({ newinfo }) {
 
@@ -13,13 +23,13 @@ export default function Reviews({ newinfo }) {
   const submitComment = async ()=>{
       //preventDefault();
       let review ={
-        //restaurant_id: newinfo.restaurant_id,
+        restaurant_id: newinfo.restaurant_id,
         description: description,
         email:email,
         puntuation: puntuation,
       }
 
-    const response = await fetch(`http://appmurcia_codeigniter.test/rest/reviewbymailbyrestid/${newinfo.restaurant_id}`,{
+    const response = await fetch(`http://appmurcia_codeigniter.test/rest/reviewbymailbyrestid`,{
         method: 'POST',
         body: JSON.stringify({review}),
         headers: {
@@ -108,13 +118,4 @@ export default function Reviews({ newinfo }) {
   )
 }
 
-export async function getServerSideProps() {
-  const res = await fetch(`http://appmurcia_codeigniter.test/rest/reviewrestauranteid/1`);
-  const newinfo = await res.json();
-  console.log(res)
-  return {
-    props: {
-      newinfo
-    }
-  }
-}
+
