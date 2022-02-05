@@ -43,7 +43,7 @@ export default function Reviews({ newinfo }) {
 
     const response = await fetch(`http://appmurcia_codeigniter.test/rest/reviewbymailbyrestid`,{
         method: 'POST',
-        body: JSON.stringify({restaurant_id: restaurant_id, description:description, email:email, puntuation:puntuation}),
+        body: JSON.stringify({restaurant_id: 1, description:description, email:email, puntuation:puntuation}),
         headers: {
             'Content-Type': 'application/json',
             },
