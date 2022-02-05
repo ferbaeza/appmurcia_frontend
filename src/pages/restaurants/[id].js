@@ -2,28 +2,18 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from 'react';
 
-export async function getServerSideProps() {
-  const res = await fetch(`http://appmurcia_codeigniter.test/rest/reviewrestauranteid/1`);
-  const newinfo = await res.json();
-  console.log(res)
-  return {
-    props: {
-      newinfo
-    }
-  }
-}
-
 export default function Reviews({ newinfo }) {
 
   const [description, setDescription]=useState('')
   const [email, setEmail]=useState('')
   const [puntuation, setPuntuation]=useState('')
+  const [restaurant_id, setRestaurant_id]=useState('')
 
 
   const submitComment = async ()=>{
-      //preventDefault();
+      event.preventDefault();
       let review ={
-        restaurant_id: newinfo.restaurant_id,
+        restaurant_id: restaurant_id,
         description: description,
         email:email,
         puntuation: puntuation,
@@ -31,12 +21,13 @@ export default function Reviews({ newinfo }) {
 
     const response = await fetch(`http://appmurcia_codeigniter.test/rest/reviewbymailbyrestid`,{
         method: 'POST',
-        body: JSON.stringify({review}),
+        body: JSON.stringify({restaurant_id:1, description:description, email:email, puntuation:puntuation}),
         headers: {
             'Content-Type': 'application/json',
             },
         })
         console.log(response)
+        console.log(restaurant_id)
         const data = await response.json()
         console.log(data)
           
@@ -88,6 +79,11 @@ export default function Reviews({ newinfo }) {
           </div>
             <div class="mx-auto" >
             <h1 className="text-center text-white bg-secondary">Nuevo Comentario</h1>
+            <div class="mb-3 text-center fs-4">
+                <label for="id" class="form-label">Id</label>
+                <input required type="id" name={newinfo.restaurant_id} onLoad={(e)=>setRestaurant_id(e.newinfo.restaurant_id)} class="form-control" id="exampleFormControlInput1" placeholder={newinfo.restaurant_id} onChange={(e)=>setRestaurant_id(e.target.value)}/>
+                </div>
+
                 <div class="mb-3 text-center fs-4">
                 <label for="email" class="form-label">Introduzca su email address</label>
                 <input required type="email" name="email" class="form-control" id="exampleFormControlInput1" placeholder="Introduzca su email" onChange={(e)=>setEmail(e.target.value)}/>
@@ -118,17 +114,14 @@ export default function Reviews({ newinfo }) {
   )
 }
 
-<<<<<<< HEAD
 export async function getServerSideProps({params}) {
   const res = await fetch(`http://appmurcia_codeigniter.test/rest/reviewrestauranteid/${params.id}`);
   const newinfo = await res.json();
-  console.log(res)
+  console.log(newinfo)
+
   return {
     props: {
       newinfo
     }
   }
 }
-=======
-
->>>>>>> 2335896a4788b14eccfe91a2b3a295686c2a3a0d
