@@ -1,17 +1,35 @@
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/router'
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 5f631d003c8977fd1ed685cd020fcf3e2829adbd
 export default function Reviews({ newinfo }) {
+
+
+
+  const Post = () => {
+    const router = useRouter()
+    const { pid } = router.query
+
+  }
+
+
 
   const [description, setDescription]=useState('')
   const [email, setEmail]=useState('')
   const [puntuation, setPuntuation]=useState('')
   const [restaurant_id, setRestaurant_id]=useState('')
+
+
+  // useEffect(async () => {
+  //   await fetch(`http://appmurcia_codeigniter.test/rest/reviewrestauranteid/${params.id}`)
+  //     .then((response) => response.json())
+  //     .then((data) => setRestaurant_id(data.restaurant_id))
+  //     .then((data) => console.log(data));
+  // });
+
+
 
 
   const submitComment = async ()=>{
@@ -25,7 +43,7 @@ export default function Reviews({ newinfo }) {
 
     const response = await fetch(`http://appmurcia_codeigniter.test/rest/reviewbymailbyrestid`,{
         method: 'POST',
-        body: JSON.stringify({restaurant_id:1, description:description, email:email, puntuation:puntuation}),
+        body: JSON.stringify({restaurant_id: restaurant_id, description:description, email:email, puntuation:puntuation}),
         headers: {
             'Content-Type': 'application/json',
             },
@@ -42,6 +60,7 @@ export default function Reviews({ newinfo }) {
       <>
         <div className="text-center">
             <h1 className="text-center fs-1 text-secondary">Reviews</h1>
+            <h1 className="text-center fs-1 text-secondary"></h1>
             <div className="p-1 mb-7 ml-7 text-white" id="head">
               <ul className="nav justify-content-center fs-3">
                   <li className="nav-item bg-dark rounded text-white">
@@ -83,9 +102,10 @@ export default function Reviews({ newinfo }) {
           </div>
             <div class="mx-auto" >
             <h1 className="text-center text-white bg-secondary">Nuevo Comentario</h1>
+            <h1 className="text-center text-white bg-secondary">Nuevo {restaurant_id}</h1>
             <div class="mb-3 text-center fs-4">
                 <label for="id" class="form-label">Id</label>
-                <input required type="id" name={newinfo.restaurant_id} onLoad={(e)=>setRestaurant_id(e.newinfo.restaurant_id)} class="form-control" id="exampleFormControlInput1" placeholder={newinfo.restaurant_id} onChange={(e)=>setRestaurant_id(e.target.value)}/>
+                <input required type="id" name="restaurant_id" onLoad={(params)=>setRestaurant_id(id)} class="form-control" id="exampleFormControlInput1" onChange={(e)=>setRestaurant_id(e.target.value)}/>
                 </div>
 
                 <div class="mb-3 text-center fs-4">
@@ -122,6 +142,7 @@ export async function getServerSideProps({params}) {
   const res = await fetch(`http://appmurcia_codeigniter.test/rest/reviewrestauranteid/${params.id}`);
   const newinfo = await res.json();
   console.log(newinfo)
+
 
   return {
     props: {
