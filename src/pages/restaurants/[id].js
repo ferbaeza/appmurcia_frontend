@@ -2,6 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from 'react';
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5f631d003c8977fd1ed685cd020fcf3e2829adbd
 export default function Reviews({ newinfo }) {
 
   const [description, setDescription]=useState('')
