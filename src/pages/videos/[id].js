@@ -17,7 +17,7 @@ export default function News({ newinfo }) {
                         </div>
                         <p class="card-text">{newinfo.description}</p>
 
-                            <a href={`https://www.youtube.com/watch?v=${newinfo.guid}`} class="btn stretched-link">
+                            <a href={newinfo.url} class="btn stretched-link">
                             <button type="button" class="btn btn-danger rounded-circle">
                                 <Image src="/images/tube.svg" width={80} height={80} alt="Youtube"/>
                             </button>

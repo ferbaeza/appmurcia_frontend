@@ -1,5 +1,3 @@
-// import Map from "./map";
-//import apikey from "./apikey";
 import Image from "next/image"
 import Head from "next/head"
 import Link from "next/link"
@@ -18,6 +16,7 @@ export async function getStaticProps() {
   export default function Weatherinfo({data}){
     return(
       <>
+      
 
         <Head>
             <title>Info Weather</title>
@@ -41,7 +40,12 @@ export async function getStaticProps() {
           <div className="mx-auto">
             <h1>{data.main}</h1>
             <h2>{data.description}</h2>
-            <h2>{data.icon}</h2>
+            <img src={`http://openweathermap.org/img/wn/${data.icon}@2x.png`}/>
+            {/* <Image
+              src={`http://openweathermap.org/img/wn/${}@2x.png`}
+              width={160}
+              height={100}
+            ></Image> */}
 
           </div>
         </div>

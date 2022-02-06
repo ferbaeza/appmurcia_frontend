@@ -4,17 +4,6 @@ import Image from "next/image"
 import { useEffect, useState } from "react";
 
 
-// export async function getStaticProps() {
-//   const res = await fetch("http://appmurcia_codeigniter.test/rest/weather/")
-//   const data = await res.json()
-//   return {
-//     props: {
-//       data
-//     }
-//   }
-// } 
-
-
   export default function Weather({data}){
     let [main, setMain] = useState(null)
     let [description, setDescription] = useState(null)
