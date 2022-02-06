@@ -48,8 +48,8 @@ export default function Navbar({data}){
                             Media
                         </a>
                         <ul class="dropdown-menu bg-dark text-secondary " aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item bg-dark text-secondary" href="/media/videos">Videos</a></li>
-                            <li><a class="dropdown-item bg-dark text-secondary" href="/media/news">Noticias</a></li>
+                            <li><a class="dropdown-item bg-dark text-secondary" href="/videos/videos">Videos</a></li>
+                            <li><a class="dropdown-item bg-dark text-secondary" href="/news/news">Noticias</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown mt-2">
