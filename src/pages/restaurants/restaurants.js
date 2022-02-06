@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Head from "next/head";
 import Navbar from "../../components/navbar/navbar";
+import { useRouter } from "next/router";
 
 export async function getStaticProps() {
     const res = await fetch("http://appmurcia_codeigniter.test/rest/restaurants/")
@@ -50,9 +51,13 @@ export async function getStaticProps() {
                             <p class="card-text">{post.address}</p>
                             <p class="card-text">Numero de opiniones: {post.numReviews}</p>
                             <p class="card-text">Puntuacion de los clientes: {post.reviewAverage}</p>
-                            <Link href={`/restaurants/[id]`} as={`/restaurants/${post.id}`} key={post.id}> 
+                            {/*<Link href={`/restaurants/[id]`} as={`/restaurants/${post.id}`} key={post.id}> 
                               <a class="btn btn-primary">Ver opiniones</a>
+                            </Link>*/}
+                            <Link href={{ pathname: "/restaurants/[id]", query: { id: post["id"] } }}> 
+                              <a class="btn btn-primary">Reviews</a>
                             </Link>
+
                           </div>
                         </div>
                         </div>

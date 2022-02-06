@@ -25,12 +25,12 @@ export default function index(){
             <div className="p-1 mb-7 ml-7 bg-dark text-white" id="head">
                 <ul className="nav justify-content-center fs-3">
                     <li className="nav-item">
-                      <Link href="/media/news">
+                      <Link href="/news/news">
                           <a className="nav-link text-muted" aria-current="page">Noticias</a>
                       </Link>
                     </li>
                     <li className="nav-item">
-                      <Link href="/media/videos">
+                      <Link href="/videos/videos">
                           <a className="nav-link text-muted" aria-current="page">Videos</a>
                       </Link>
                     </li>
@@ -61,10 +61,10 @@ export default function index(){
             aria-expanded="false">Media</button>                        
             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                 <li>
-                    <a className="dropdown-item bg-secondary text-white" href="/media/videos">Videos</a>
+                    <a className="dropdown-item bg-secondary text-white" href="/videos/videos">Videos</a>
                 </li>
                 <li>
-                    <a className="dropdown-item bg-secondary text-white" href="/media/news">Noticias</a>
+                    <a className="dropdown-item bg-secondary text-white" href="/news/news">Noticias</a>
                 </li>
             </ul>
         </div>

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Weather from "../../pages/weather/weather";
 //import Weather from "../../pages/weather/weather";
 //import { NoMatch } from '../../pages/weather/weather';
 
@@ -47,8 +48,8 @@ export default function Navbar({data}){
                             Media
                         </a>
                         <ul class="dropdown-menu bg-dark text-secondary " aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item bg-dark text-secondary" href="/media/videos">Videos</a></li>
-                            <li><a class="dropdown-item bg-dark text-secondary" href="/media/news">Noticias</a></li>
+                            <li><a class="dropdown-item bg-dark text-secondary" href="/videos/videos">Videos</a></li>
+                            <li><a class="dropdown-item bg-dark text-secondary" href="/news/news">Noticias</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown mt-2">
@@ -58,20 +59,8 @@ export default function Navbar({data}){
                     </li>
                     
                     <li class="nav-item dropdown mt-2">
-                        <Link href="../weather/weather">
-                            <a className="nav-link text-danger" aria-current="page">W</a>
-                        </Link>
-
-                    </li>
-                    <li class="nav-item dropdown mt-2 text-danger">
-                        <Link href="../videos/Lastvideo">
-                            <a className="nav-link text-danger" aria-current="page">LastVideo</a>
-                        </Link>
-
-                    </li>
-                    <li class="nav-item dropdown mt-2 text-danger">
-                        <Link href="../news/LastNew">
-                            <a className="nav-link text-danger" aria-current="page">LastNew</a>
+                        <Link href="../weather/weatherinfo">
+                            <a className="nav-link text-info" aria-current="page"><Weather/></a>
                         </Link>
 
                     </li>
