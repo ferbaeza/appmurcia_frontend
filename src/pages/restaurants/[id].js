@@ -2,7 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState, useEffect } from 'react';
 import Router from "next/router";
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
+import ReactStars from 'react-stars';
 
 
 export default function Reviews({ newinfo }) {
@@ -31,7 +32,10 @@ export default function Reviews({ newinfo }) {
   };
 
 
-
+  const ratingChanged = (newRating) => {
+    console.log(newRating)
+    setPuntuation(newRating)
+  }
   
 
 
@@ -113,9 +117,9 @@ export default function Reviews({ newinfo }) {
                 <label for="email" class="form-label">Introduzca su email address</label>
                 <input required type="email" name="email" class="form-control" id="exampleFormControlInput1" placeholder="Introduzca su email" onChange={(e)=>setEmail(e.target.value)}/>
                 </div>
-                <div class="mb-3 text-center fs-4">
+                <div class="mb-3 text-center fs-4 ">
                 <label for="puntuation" class="form-label">Introduzca la puntuacion</label>
-                <select class="form-select" aria-label="Default select example" onChange={(e)=>setPuntuation(e.target.value)}>
+                {/* <select class="form-select" aria-label="Default select example" onChange={(e)=>setPuntuation(e.target.value)}>
                   <option value={0}>0</option>
                   <option value={1}>1</option>
                   <option value={2}>2</option>
@@ -127,7 +131,15 @@ export default function Reviews({ newinfo }) {
                   <option value={8}>8</option>
                   <option value={9}>9</option>
                   <option value={10}>10</option>
-                </select>
+                </select> */}
+                <div class="d-flex flex-row justify-content-center">
+                <ReactStars
+                  count={10}
+                  onChange={ratingChanged}
+                  size={50}
+                  color2={'#ffd700'} 
+                />
+                </div>
                 </div>
                 <div class="mb-3 text-center fs-4">
                 <label for="description">Descripcion</label>

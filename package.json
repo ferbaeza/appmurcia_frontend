@@ -23,6 +23,7 @@
     "react-map-gl": "^6.1.19",
     "react-player": "^2.9.0",
     "react-responsive-carousel": "^3.2.22",
+    "react-stars": "^2.2.5",
     "react-youtube": "^7.14.0",
     "slides": "^0.0.0"
   },
