@@ -16,6 +16,9 @@ export async function getStaticProps() {
 
 
   export default function Weatherinfo({data}){
+
+    const urlWeather =
+    "http://openweathermap.org/img/wn/" + data.icon + "@2x.png";
     return(
       <>
 
@@ -35,14 +38,17 @@ export async function getStaticProps() {
                 </ul>
               </div>
         </div>
+        <div class="col rounded-3 pt-5 col-3 text-center m-auto" >
+          <div class="card text-dark bg-light mb-3">
+            <div class="card-header bg-primary text-white">
+              <div className="card-body">
+                <h5 className="card-title">{data.main}</h5>
+                <h2 className="card-text">{data.description}</h2>
+                <h2 className="card-text"><img src={urlWeather} layout="fill" /></h2>
+                
 
-
-        <div className="container">
-          <div className="mx-auto">
-            <h1>{data.main}</h1>
-            <h2>{data.description}</h2>
-            <h2>{data.icon}</h2>
-
+              </div>
+            </div>
           </div>
         </div>
         
