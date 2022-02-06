@@ -23,26 +23,20 @@ import { useEffect, useState } from "react";
     await fetch("http://appmurcia_codeigniter.test/rest/weather")
       .then((response) => response.json())
       //.then((data) => setMain(data.main))
-      //.then((data) => setDescription(data.description))     
-      .then((data) => setIcon(data.icon))      
+      .then((data) => setDescription(data.description))     
+      //.then((data) => setIcon(data.icon))      
       .then((data) => console.log(data));
   });
 
     return(
         <>
-        <h3>{main}</h3> 
-        <div>
-          <Image
-            src={`https://openweathermap.org/img/wn/${icon}@2x.png`}
-            layout="fill"
-          />
-        </div>                 
+        <div className="container">
+          <div className="mx-auto">
+            <h2>{description}</h2>
 
-        <h4>{description}</h4>
-
+          </div>
+        </div>
         
-
-
         </>
     )
    

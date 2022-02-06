@@ -28,7 +28,7 @@ export async function getStaticProps() {
             <div className="p-1 mb-7 ml-7 bg-dark text-white" id="head">
                 <ul className="nav justify-content-center fs-3">
                     <li className="nav-item">
-                      <Link href="/media/news">
+                      <Link href="/news/news">
                           <a className="nav-link text-muted" aria-current="page">Noticias</a>
                       </Link>
                     </li>
@@ -45,7 +45,7 @@ export async function getStaticProps() {
                     </li>
                     <li className="nav-item">
                       <Link href="/videos/videos">
-                          <a className="nav-link text-muted" aria-current="page">Test Videos</a>
+                          <a className="nav-link text-muted" aria-current="page">Videos</a>
                       </Link>
                     </li>
 

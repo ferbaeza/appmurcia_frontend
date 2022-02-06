@@ -38,11 +38,6 @@ export async function getStaticProps() {
                           <a className="nav-link text-muted" aria-current="page">Home</a>
                       </Link>
                     </li>
-                    <li className="nav-item">
-                      <Link href="/news/news">
-                          <a className="nav-link text-muted" aria-current="page">Test Noticias</a>
-                      </Link>
-                    </li>
 
 
                 </ul>

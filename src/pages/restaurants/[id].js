@@ -1,55 +1,59 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState, useEffect } from 'react';
+import Router from "next/router";
 import { useRouter } from 'next/router'
 
 
 export default function Reviews({ newinfo }) {
 
 
-
-  const Post = () => {
-    const router = useRouter()
-    const { pid } = router.query
-
-  }
-
+  const router = useRouter();
+  const restaid = router.query;
+  const resourceType = restaid.id;
+  console.log(resourceType)
 
 
   const [description, setDescription]=useState('')
   const [email, setEmail]=useState('')
   const [puntuation, setPuntuation]=useState('')
-  const [restaurant_id, setRestaurant_id]=useState('')
+
+  const deleteReview= async (id)=>{
+    const reviewid = id
+     fetch(`http://appmurcia_codeigniter.test/rest/deletereviewid/${reviewid}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(reviewid),
+    })
+    Router.reload(window.location.pathname);
+  };
 
 
-  // useEffect(async () => {
-  //   await fetch(`http://appmurcia_codeigniter.test/rest/reviewrestauranteid/${params.id}`)
-  //     .then((response) => response.json())
-  //     .then((data) => setRestaurant_id(data.restaurant_id))
-  //     .then((data) => console.log(data));
-  // });
+
+  
 
 
-
-
-  const submitComment = async ()=>{
+  const submitReview = async (event)=>{
       event.preventDefault();
-      let review ={
-        restaurant_id: restaurant_id,
-        description: description,
-        email:email,
-        puntuation: puntuation,
-      }
 
-    const response = await fetch(`http://appmurcia_codeigniter.test/rest/reviewbymailbyrestid`,{
+      // let review ={
+      //   description: description,
+      //   email:email,
+      //   puntuation: puntuation,
+      // }
+
+    const response = await fetch(`http://appmurcia_codeigniter.test/rest/reviewbymailbyrestid/${resourceType}`,{
         method: 'POST',
-        body: JSON.stringify({restaurant_id: 1, description:description, email:email, puntuation:puntuation}),
+        body: JSON.stringify({description:description, email:email, puntuation:puntuation}),
+        //body: JSON.stringify({review}),
         headers: {
             'Content-Type': 'application/json',
             },
         })
+        Router.reload(window.location.pathname);
         console.log(response)
-        console.log(restaurant_id)
         const data = await response.json()
         console.log(data)
           
@@ -74,24 +78,26 @@ export default function Reviews({ newinfo }) {
                     
 
         </div>
-        <div className='row'>
+        <div className='row mt-4'>
         <div class="row row-cols-3">
 
         {newinfo.map((newinfo, i)=>{
+
           return(
-                <div class="card text-dark bg-light mb-3">
-                    <div class="card-header bg-info text-white text-center" key={newinfo.id}></div>
-                        <p class="card-text fs-4">{newinfo.description}</p>
-                        <p>
-                        <span className="bg-secondary fs-5">Escrito por: </span><p class="card-text">{newinfo.email}</p>
-                        </p>
-                        <p>
-                        <span className="bg-secondary fs-5">Puntuacion: </span><p class="card-text">{newinfo.puntuation}</p>
-                        <span className="text-danger fs-5">Id Restaurantes: </span><p class="card-text text-danger">{newinfo.restaurant_id}</p>
-                        </p>
-                    </div>
-
-
+            <>
+              <div class="card text-dark bg-light mb-3">
+                  <div class="card-header bg-primary text-white text-center" key={newinfo.id}>
+                    <button type="submit" class="btn btn-dark text-white" onClick={()=>deleteReview(newinfo.id)}>Borrar comentario</button>
+                  </div>
+                      <p className="fs-5 card-text fs-4">{newinfo.description}</p>
+                      <p className=" fs-5">
+                      <span className="fs-5">Escrito por: </span><p class="card-text">{newinfo.email}</p>
+                      </p>
+                      <p className=" fs-5">
+                      <span className="fs-5">Puntuacion: </span><p class="card-text">{newinfo.puntuation}</p>
+                      </p>
+                  </div>
+            </>
           )
         })}
         </div>
@@ -102,19 +108,26 @@ export default function Reviews({ newinfo }) {
           </div>
             <div class="mx-auto" >
             <h1 className="text-center text-white bg-secondary">Nuevo Comentario</h1>
-            <h1 className="text-center text-white bg-secondary">Nuevo {restaurant_id}</h1>
-            <div class="mb-3 text-center fs-4">
-                <label for="id" class="form-label">Id</label>
-                <input required type="id" name="restaurant_id" onLoad={(params)=>setRestaurant_id(id)} class="form-control" id="exampleFormControlInput1" onChange={(e)=>setRestaurant_id(e.target.value)}/>
-                </div>
-
+              <form className="" onSubmit={submitReview}>
                 <div class="mb-3 text-center fs-4">
                 <label for="email" class="form-label">Introduzca su email address</label>
                 <input required type="email" name="email" class="form-control" id="exampleFormControlInput1" placeholder="Introduzca su email" onChange={(e)=>setEmail(e.target.value)}/>
                 </div>
                 <div class="mb-3 text-center fs-4">
                 <label for="puntuation" class="form-label">Introduzca la puntuacion</label>
-                <input required type="text" name="puntuation" class="form-control" id="exampleFormControlInput1" placeholder="Puntuacion del 1 al 10" onChange={(e)=>setPuntuation(e.target.value)}/>
+                <select class="form-select" aria-label="Default select example" onChange={(e)=>setPuntuation(e.target.value)}>
+                  <option value={0}>0</option>
+                  <option value={1}>1</option>
+                  <option value={2}>2</option>
+                  <option value={3}>3</option>
+                  <option value={4}>4</option>
+                  <option value={5}>5</option>
+                  <option value={6}>6</option>
+                  <option value={7}>7</option>
+                  <option value={8}>8</option>
+                  <option value={9}>9</option>
+                  <option value={10}>10</option>
+                </select>
                 </div>
                 <div class="mb-3 text-center fs-4">
                 <label for="description">Descripcion</label>
@@ -123,8 +136,9 @@ export default function Reviews({ newinfo }) {
                 </div>
                 <br></br>
                 <div class="col-auto text-center">
-                    <button type="submit" class="btn btn-primary mb-3" onClick={submitComment}>Enviar comentario</button>
+                    <button type="submit" class="btn btn-primary mb-3">Enviar comentario</button>
                 </div>
+              </form>
 
         </div>
         </div>
@@ -143,10 +157,11 @@ export async function getServerSideProps({params}) {
   const newinfo = await res.json();
   console.log(newinfo)
 
-
   return {
     props: {
       newinfo
+
     }
   }
+
 }
